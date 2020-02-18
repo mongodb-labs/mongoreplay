@@ -158,12 +158,17 @@ To run unit and integration tests:
 ```
 go test -v ./... 
 ```
-If TOOLS_TESTING_UNIT is set to "true" in the environment, unit tests will run.
-If TOOLS_TESTING_INTEGRATION is set to "true" in the environment, integration tests will run.
+If TOOLS_TESTING_UNIT is set to "true" in the environment, unit tests will run. Delete the environment variable will disable unittest test.
+If TOOLS_TESTING_INTEGRATION is set to "true" in the environment, integration tests will run. Delete the environment variable will disable integration test.
 
 Integration tests require a `mongod` (running on port 33333) while unit tests do not.
 
 To run the tests inside pcap_test.go, you need to download the testing pcap files from Amazon S3 to mongoreplay/testPcap
 bucket: boxes.10gen.com
 path: build/mongotape/
+
+To test the legacy library:
+```
+./runTests.sh
+```
 
