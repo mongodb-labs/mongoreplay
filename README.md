@@ -55,9 +55,9 @@ export GO111MODULE=on
 export GOSUMDB=off
 export GOFLAGS=-mod=vendor
 
-go build -o bin/monogreplay main/monogreplay.go
-go build -o bin/monogreplay -tags ssl main/monogreplay.go
-go build -o bin/monogreplay -tags "ssl sasl" main/monogreplay.go
+go build -o bin/mongoreplay main/mongoreplay.go
+go build -o bin/mongoreplay -tags ssl main/mongoreplay.go
+go build -o bin/mongoreplay -tags "ssl sasl" main/mongoreplay.go
 ```
 
 ### Use Mongoreplay
