@@ -13,8 +13,8 @@ To build the tools, you need to have Go version 1.9 and up. `go get` will not wo
 need to clone the repository to build it.
 
 ```
-git clone https://github.com/mongodb/mongo-tools
-cd mongo-tools
+git clone https://github.com/mongodb-labs/mongoreplay.git
+cd mongodb-labs/mongoreplay.git
 ```
 
 To use build/test scripts in the repo, you *MUST* set GOROOT to your Go root directory.
@@ -156,7 +156,7 @@ The fields are as follows:
 To run unit and integration tests:
 
 ```
-go test -v ./... 
+./runTests.sh
 ```
 If TOOLS_TESTING_UNIT is set to "true" in the environment, unit tests will run. Delete the environment variable will disable unittest test.
 If TOOLS_TESTING_INTEGRATION is set to "true" in the environment, integration tests will run. Delete the environment variable will disable integration test.
@@ -166,9 +166,3 @@ Integration tests require a `mongod` (running on port 33333) while unit tests do
 To run the tests inside pcap_test.go, you need to download the testing pcap files from Amazon S3 to mongoreplay/testPcap
 bucket: boxes.10gen.com
 path: build/mongotape/
-
-To test the legacy library:
-```
-./runTests.sh
-```
-
