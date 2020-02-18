@@ -38,23 +38,3 @@ All commits to the MongoDB Tools repository must pass golint:
 
 _We use a modified version of [golint](https://github.com/golang/lint)_
 
-Testing
--------
-
-To run unit and integration tests:
-
-```
-go test -v ./... 
-```
-If TOOLS_TESTING_UNIT is set to "true" in the environment, unit tests will run.
-If TOOLS_TESTING_INTEGRATION is set to "true" in the environment, integration tests will run.
-
-Integration tests require a `mongod` (running on port 33333) while unit tests do not.
-
-To run the quality assurance tests, you need to have the latest stable version of the rebuilt tools, `mongod`, `mongos`, and `mongo` in your current working directory. 
-
-```
-cd test/qa-tests
-python buildscripts/smoke.py bson export files import oplog restore stat top
-```
-_Some tests require older binaries that are named accordingly (e.g. `mongod-2.4`, `mongod-2.6`, etc). You can use [setup_multiversion_mongodb.py](test/qa-tests/buildscripts/setup_multiversion_mongodb.py) to download those binaries_
