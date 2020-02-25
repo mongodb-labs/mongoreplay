@@ -33,8 +33,7 @@ ec=0
 echo "Building mongoreplay..."
 export GO111MODULE=on
 export GOSUMDB=off
-export GOFLAGS=-mod=vendor
-go build -o "bin/mongoreplay$BINARY_EXT" $(buildflags) -ldflags "$(print_ldflags)" -tags "$(print_tags $tags)" "main/mongoreplay.go" || { echo "Error building mongoreplay"; ec=1; break; }
+go build -o "bin/mongoreplay$BINARY_EXT" $(buildflags) -ldflags "$(print_ldflags)" -tags "$(print_tags $tags)" "main/mongoreplay.go" || { echo "Error building mongoreplay"; ec=1; }
 ./bin/mongoreplay${BINARY_EXT} --version | head -1
 
 if [ -t /dev/stdin ]; then

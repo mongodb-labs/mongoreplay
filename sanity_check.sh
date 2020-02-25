@@ -3,7 +3,7 @@
 PORT=27017
 STARTMONGO=false
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PCAPFILE="$SCRIPT_DIR/mongoreplay_test.out"
+PCAPFILE="$SCRIPT_DIR/mongoreplay/mongoreplay_test.out"
 
 while test $# -gt 0; do
 	case "$1" in
@@ -40,10 +40,10 @@ OUTFILE="$(echo $PCAPFILE | cut -f 1 -d '.').playback"
 mongoreplay record -f $PCAPFILE -p $OUTFILE
 
 if [ "$STARTMONGO" = true ]; then
-	rm -rf /data/mongoreplay/
-	mkdir /data/mongoreplay/
+	rm -rf "$SCRIPT_DIR/data"
+	mkdir "$SCRIPT_DIR/data"
 	echo "starting MONGOD"
-	mongod --port=$PORT --dbpath=/data/mongoreplay &
+	mongod --port=$PORT --dbpath="$SCRIPT_DIR/data" &
 	MONGOPID=$!
 fi
 
