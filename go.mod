@@ -22,7 +22,7 @@ require (
 	gopkg.in/yaml.v2 v2.2.8
 )
 
-replace github.com/10gen/mgo => github.com/10gen/mgo v0.0.0-20181212170345-8c133fd1d0fc
+replace github.com/10gen/mgo.v2 => github.com/10gen/mgo v0.0.0-20181212170345-8c133fd1d0fc
 
 replace github.com/spacemonkeygo/spacelog => github.com/spacemonkeygo/spacelog v0.0.0-20160606222522-f936fb050dc6
 

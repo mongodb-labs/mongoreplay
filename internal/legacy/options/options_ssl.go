@@ -14,12 +14,12 @@ func init() {
 }
 
 func registerSSLOptions(self *ToolOptions) error {
-	_, err := self.parser.AddGroup("ssl options", "", SSL)
+	_, err := self.parser.AddGroup("ssl options", "", self.SSL)
 	if err != nil {
 		return err
 	}
 	if self.enabledOptions.URI {
-		URI.AddKnownURIParameters(KnownURIOptionsSSL)
+		self.URI.AddKnownURIParameters(KnownURIOptionsSSL)
 	}
 	return nil
 }
