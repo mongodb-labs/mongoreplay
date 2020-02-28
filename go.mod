@@ -22,10 +22,9 @@ require (
 	gopkg.in/yaml.v2 v2.2.8
 )
 
-replace github.com/10gen/mgo.v2 => github.com/10gen/mgo v0.0.0-20181212170345-8c133fd1d0fc
-
-replace github.com/spacemonkeygo/spacelog => github.com/spacemonkeygo/spacelog v0.0.0-20160606222522-f936fb050dc6
-
-replace github.com/golang/snappy => github.com/golang/snappy v0.0.0-20160529050041-d9eb7a3d35ec
-
-replace github.com/golang/text => github.com/golang/text v0.3.0
+replace (
+	github.com/golang/snappy => github.com/golang/snappy v0.0.0-20160529050041-d9eb7a3d35ec
+	github.com/spacemonkeygo/spacelog => github.com/spacemonkeygo/spacelog v0.0.0-20160606222522-f936fb050dc6
+	golang.org/x/text => github.com/golang/text v0.3.0
+	gopkg.in/mgo.v2 => github.com/10gen/mgo v0.0.0-20181212170345-8c133fd1d0fc
+)
