@@ -1,5 +1,5 @@
-#MongoReplay
-This Repository is NOT a supported MongoDB product
+# Mongoreplay
+Mongoreplay is not a supported MongoDB product.
 
 ## Purpose
 
