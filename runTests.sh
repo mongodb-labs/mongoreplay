@@ -14,17 +14,12 @@ mkdir -p "$OUTPUT_DIR"
 . ./set_goenv.sh
 set_goenv || exit
 
-# remove stale packages
-rm -rf vendor/pkg
-
 # build binaries for any tests that expect them for blackbox testing
 ./build.sh $tags
 ec=0
 
 # Run all tests depending on what flags are set in the environment
-# TODO: mongotop needs a test
-# Note: Does not test mongoreplay
-for i in legacy/failpoint legacy/json legacy/log legacy/options legacy/util mongoreplay; do
+for i in internal/legacy/failpoint internal/legacy/json internal/legacy/log internal/legacy/options internal/legacy/util mongoreplay; do
         echo "Testing ${i}..."
         COMMON_SUBPKG=$(basename $i)
         COVERAGE_ARGS="";
