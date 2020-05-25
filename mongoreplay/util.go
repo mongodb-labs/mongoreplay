@@ -401,6 +401,9 @@ func ConvertBSONValueToJSON(x interface{}) (interface{}, error) {
 	case string:
 		return v, nil // require no conversion
 
+	case bson.Symbol:
+		return v, nil // require no conversion
+
 	case int:
 		return json.NumberInt(v), nil
 
