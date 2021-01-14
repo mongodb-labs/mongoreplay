@@ -1,5 +1,5 @@
 # Mongoreplay
-Mongoreplay is not a supported MongoDB product.
+Mongoreplay is no longer supported or maintained.
 
 ## Purpose
 
